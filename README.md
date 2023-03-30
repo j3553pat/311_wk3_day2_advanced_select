@@ -43,9 +43,27 @@ We are going to run a couple SQL queries and put the answers in the "Query Respo
   * CT
   * TX:
   * WY:
+ 
+I used select all in the user address table and filtered it using states that equal to the sums above. Did make sure I made it Ascending order to make sure it is easier for the user to read the results.
+
+SELECT * 
+FROM usersaddress 
+WHERE state = 'AK'
+	OR STATE = 'CT'
+    OR STATE = 'TX'
+    OR STATE = 'WY' 
+ORDER BY STATE ASC
 
 2.
   * Area code:
+
+providing which area code tends to be the most popular or common. Using this method, it provides two results from phone1 and phone2
+
+SELECT substring(phone1, 1,3), COUNT(*)
+FROM userscontact  GROUP BY substring(phone1, 1,3);
+
+SELECT substring(phone2, 1,3), COUNT(*)
+FROM userscontact  GROUP BY substring(phone2, 1,3);
 
 3.
   * first_name:
