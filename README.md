@@ -66,9 +66,11 @@ SELECT substring(phone2, 1,3), COUNT(*)
 FROM userscontact  GROUP BY substring(phone2, 1,3);
 
 3.
-  * first_name:
-  * county:
-  * county total:
+  * first_name: Andra
+  * county: New York
+  * county total: 14 
+
+  SELECT MIN(users.first_name), county, COUNT(*) AS totalusers FROM usersaddress JOIN users ON usersaddress.user_id = users.id GROUP BY county HAVING totalusers > 10
 
 
 ## Summary
